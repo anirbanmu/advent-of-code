@@ -1,0 +1,13 @@
+CC=clang++
+CFLAGS=-I. -Wall -Werror -Wextra -std=c++17 -O3
+LFLAGS=
+
+main : main.o
+	$(CC) $(CFLAGS) $(LFLAGS) -o main main.o
+
+main.o : main.cpp
+	$(CC) $(CFLAGS) -c main.cpp
+
+clean:
+	rm -f main.o
+	rm -f main

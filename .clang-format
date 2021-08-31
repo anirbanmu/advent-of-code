@@ -1,0 +1,10 @@
+---
+AlignOperands: 'false'
+BinPackArguments: 'false'
+BinPackParameters: 'false'
+ColumnLimit: '160'
+Cpp11BracedListStyle: 'true'
+IndentWidth: '4'
+NamespaceIndentation: All
+
+...
