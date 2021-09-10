@@ -27,7 +27,8 @@ namespace Year2015::Day2 {
                 ribbon_length += lw * h + std::min(std::min(2 * l + 2 * w, 2 * w + 2 * h), 2 * h + 2 * l);
             }
 
-            return Base::Answers{Base::Answer{"Total area needed", surface_area}, Base::Answer{"Total ribbon needed", ribbon_length}};
+            return Base::Answers{Base::Answer{"Total area needed", surface_area},
+                                 Base::Answer{"Total ribbon needed", ribbon_length}};
         }
     };
 } // namespace Year2015::Day2

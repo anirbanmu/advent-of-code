@@ -24,12 +24,14 @@ namespace Year2015::Day5 {
                 nice_words_count.part1 += niceness.part1 ? 1 : 0;
                 nice_words_count.part2 += niceness.part2 ? 1 : 0;
             }
-            return Base::Answers{Base::Answer{"Nice strings count", nice_words_count.part1}, Base::Answer{"Nice strings count", nice_words_count.part2}};
+            return Base::Answers{Base::Answer{"Nice strings count", nice_words_count.part1},
+                                 Base::Answer{"Nice strings count", nice_words_count.part2}};
         }
 
       private:
         const std::unordered_set<char> VOWELS = std::unordered_set<char>{'a', 'e', 'i', 'o', 'u'};
-        const std::unordered_set<std::string> DISALLOWED_TWO_TUPLES = std::unordered_set<std::string>{"ab", "cd", "pq", "xy"};
+        const std::unordered_set<std::string> DISALLOWED_TWO_TUPLES =
+            std::unordered_set<std::string>{"ab", "cd", "pq", "xy"};
 
         using Niceness = struct { bool part1, part2; };
 
@@ -88,8 +90,10 @@ namespace Year2015::Day5 {
                 }
             }
 
-            return Niceness{tracker.part1.vowel_count >= 3 && tracker.part1.has_consecutive_repeated_character && tracker.part1.all_two_tuples_allowed,
-                            tracker.part2.has_non_overlapping_repeated_two_tuple && tracker.part2.has_skip_character_repeat};
+            return Niceness{tracker.part1.vowel_count >= 3 && tracker.part1.has_consecutive_repeated_character &&
+                                tracker.part1.all_two_tuples_allowed,
+                            tracker.part2.has_non_overlapping_repeated_two_tuple &&
+                                tracker.part2.has_skip_character_repeat};
         }
     };
 } // namespace Year2015::Day5
