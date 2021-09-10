@@ -2,7 +2,7 @@
 AlignOperands: 'false'
 BinPackArguments: 'false'
 BinPackParameters: 'false'
-ColumnLimit: '160'
+ColumnLimit: '120'
 Cpp11BracedListStyle: 'true'
 IndentWidth: '4'
 NamespaceIndentation: All

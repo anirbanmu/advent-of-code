@@ -17,7 +17,8 @@ namespace Year2015::Day3 {
 
         struct Hash : public std::unary_function<Point, std::size_t> {
             std::size_t operator()(const Point &p) const {
-                static_assert(sizeof(p.x) * 2 == sizeof(size_t), "Point::Hash assumes that x & y can fit into hash key");
+                static_assert(sizeof(p.x) * 2 == sizeof(size_t),
+                              "Point::Hash assumes that x & y can fit into hash key");
                 static_assert(std::numeric_limits<decltype(p.x)>::digits + 1 == 32, "32 bit ints");
                 return (size_t(p.x) << (std::numeric_limits<decltype(p.x)>::digits + 1)) | (0xFFFFFFFF & p.y);
             }
@@ -48,7 +49,8 @@ namespace Year2015::Day3 {
         Base::Answers solve(std::ifstream &input) const override {
             struct {
                 std::unordered_set<Point, Point::Hash> part1, part2;
-            } houses_with_presents{std::unordered_set<Point, Point::Hash>{Point{0, 0}}, std::unordered_set<Point, Point::Hash>{Point{0, 0}}};
+            } houses_with_presents{std::unordered_set<Point, Point::Hash>{Point{0, 0}},
+                                   std::unordered_set<Point, Point::Hash>{Point{0, 0}}};
 
             struct {
                 struct {

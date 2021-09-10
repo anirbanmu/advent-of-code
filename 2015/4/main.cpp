@@ -28,7 +28,8 @@ namespace Year2015::Day4 {
 
             unsigned char md5sum[MD5_DIGEST_LENGTH]{};
             std::ostringstream current{};
-            for (unsigned long i = 0; !answers.lowest_five_zeroes.found || !answers.lowest_six_zeroes.found; ++i, current.str("")) {
+            for (unsigned long i = 0; !answers.lowest_five_zeroes.found || !answers.lowest_six_zeroes.found;
+                 ++i, current.str("")) {
                 current << s << i;
                 const auto current_string{current.str()};
                 const auto buf = current_string.c_str();
@@ -47,8 +48,9 @@ namespace Year2015::Day4 {
                 }
             }
 
-            return Base::Answers{Base::Answer{"Lowest number to produce 5 zeroes MD5", answers.lowest_five_zeroes.value},
-                                 Base::Answer{"Lowest number to produce 6 zeroes MD5", answers.lowest_six_zeroes.value}};
+            return Base::Answers{
+                Base::Answer{"Lowest number to produce 5 zeroes MD5", answers.lowest_five_zeroes.value},
+                Base::Answer{"Lowest number to produce 6 zeroes MD5", answers.lowest_six_zeroes.value}};
         }
     };
 } // namespace Year2015::Day4

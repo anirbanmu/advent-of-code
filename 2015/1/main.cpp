@@ -23,7 +23,8 @@ namespace Year2015::Day1 {
                 }
             }
 
-            return Base::Answers{Base::Answer{"Santa floor", floor}, Base::Answer{"Santa basement reaching position", basement_reaching_idx}};
+            return Base::Answers{Base::Answer{"Santa floor", floor},
+                                 Base::Answer{"Santa basement reaching position", basement_reaching_idx}};
         }
     };
 } // namespace Year2015::Day1
