@@ -114,9 +114,10 @@ namespace Year2021::Day5 {
         static std::vector<Line> read_lines(std::ifstream &input) {
             auto lines = std::vector<Line>{};
 
-            Point start_point, end_point;
-            char throwaway_char;
-            std::string throwaway_str;
+            auto start_point = Point{};
+            auto end_point = Point{};
+            auto throwaway_char = char{};
+            auto throwaway_str = std::string{};
             while (input >> start_point.x >> throwaway_char >> start_point.y >> throwaway_str >> end_point.x >>
                    throwaway_char >> end_point.y) {
                 lines.emplace_back(start_point, end_point);
