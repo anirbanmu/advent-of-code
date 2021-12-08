@@ -67,14 +67,14 @@ namespace Year2021::Day6 {
             size_t pos = 0;
             size_t delim_pos = 0;
             while ((delim_pos = str_view.find(',', pos)) != std::string::npos) {
-                const auto age = Utils::str_to_ull(str_view.substr(pos, delim_pos - pos));
+                const auto age = Utils::str_to_int(str_view.substr(pos, delim_pos - pos));
                 if (age > MAX_FISH_BIO_TIMER) {
                     throw Error{"malformed_input"};
                 }
                 ++tracker[age];
                 pos = delim_pos + 1;
             }
-            const auto age = Utils::str_to_ull(str_view.substr(pos, delim_pos - pos));
+            const auto age = Utils::str_to_int(str_view.substr(pos, delim_pos - pos));
             if (age > MAX_FISH_BIO_TIMER) {
                 throw Error{"malformed_input"};
             }

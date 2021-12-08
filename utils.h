@@ -6,8 +6,8 @@
 #include <string>
 
 namespace Utils {
-    unsigned long long str_to_ull(const std::string_view &str) {
-        unsigned long long number = 0;
+    template <typename T = unsigned long long> T str_to_int(const std::string_view &str) {
+        T number = 0;
         auto [ptr, err] = std::from_chars(str.data(), str.data() + str.size(), number);
         if (err != std::errc{} || ptr != str.data() + str.size()) {
             throw std::runtime_error{"malformed_input"};
